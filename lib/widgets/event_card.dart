@@ -62,11 +62,24 @@ class EventCard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Text('.ೃ࿔ 📍 *:･ ${evento['lugar']}'),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Text('⋆⭒˚𖠋𖠋𖠋*.⋆ ${evento['cupo']} lugares'),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    '📍${evento['lugar']}',
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  //overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    '${evento['cupo']} lugares',
+                    textAlign: TextAlign.right,
+                  ),
+                ),
+              ],
+            ),
           ),
           // NOTE: Para mostrar la hora, lugar y cupos del evento
 
